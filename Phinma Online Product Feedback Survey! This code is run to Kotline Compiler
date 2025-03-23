@@ -1,0 +1,47 @@
+object JDoodle {
+    @JvmStatic
+    fun main(args: Array<String>) {
+        // Program sample by Dr. Fuentes Phinma UL in Kotlin
+        println("Welcome to the Phinma Online Product Feedback Survey!")
+        println("Please provide your feedback by answering a few questions.")
+
+        // Get user information
+        print("Name: ")
+        val name = readLine()?.takeIf { it.isNotBlank() } ?: "Anonymous"
+
+        print("Email: ")
+        val email = readLine()?.takeIf { it.isNotBlank() } ?: "No Email Provided"
+
+        println("\nThank you, $name!")
+
+        // Get feedback ratings with validation
+        fun getRating(prompt: String): Int {
+            while (true) {
+                print(prompt)
+                val input = readLine()?.toIntOrNull() ?: 0
+                if (input in 1..5) return input
+                println("❌ Invalid input. Please enter a number between 1 and 5.")
+            }
+        }
+
+        // Collect Ratings
+        val userInterfaceRating = getRating("User Interface (1-5): ")
+        val productSelectionRating = getRating("Product Selection (1-5): ")
+        val deliverySpeedRating = getRating("Delivery Speed (1-5): ")
+        val customerSupportRating = getRating("Customer Support (1-5): ")
+
+        // Get additional comments
+        println("\nAny additional comments? (Press Enter to skip)")
+        val comments = readLine()?.takeIf { it.isNotBlank() } ?: "No additional comments"
+
+        // Display summary
+        println("\n✅ Thank you for your feedback, $name!")
+        println("📌 Summary of Your Feedback:")
+        println("📧 Email: $email")
+        println("⭐ User Interface Rating: $userInterfaceRating")
+        println("⭐ Product Selection Rating: $productSelectionRating")
+        println("⭐ Delivery Speed Rating: $deliverySpeedRating")
+        println("⭐ Customer Support Rating: $customerSupportRating")
+        println("💬 Additional Comments: $comments")
+    }
+}
