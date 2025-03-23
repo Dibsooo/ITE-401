@@ -1,0 +1,43 @@
+the index.html code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location App</title>
+</head>
+<body>
+
+    <h1>Location</h1>
+    <input type="text" id="locationInput" placeholder="Enter location">
+    <button id="addLocationButton">Add Location</button>
+    <ul id="locationList"></ul>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
+
+the app.js code 
+const locationInput = document.getElementById("locationInput");
+const addLocationButton = document.getElementById("addLocationButton");
+const locationList = document.getElementById("locationList");
+
+const locations = [];
+
+addLocationButton.addEventListener("click", () => {
+    const newLocation = locationInput.value.trim();
+    
+    if (newLocation) {
+        locations.push(newLocation);
+        locationList.innerHTML = ""; // Clear existing list
+
+        for (const location of locations) {
+            const listItem = document.createElement("li");
+            listItem.textContent = location;
+            locationList.appendChild(listItem);
+        }
+
+        locationInput.value = ""; // Clear input field
+    }
+});
