@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Survey Form</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: 'Arial', sans-serif;
+                background-color: #f4f4f9;
+                color: #333;
+                line-height: 1.6;
+            }
+
+            h1 {
+                text-align: center;
+                background-color: #2e8b57;
+                color: #fff;
+                padding: 30px 0;
+                margin-bottom: 20px;
+                font-size: 2.5em;
+                letter-spacing: 1px;
+            }
+
+            .form-wrapper {
+                background-color: #2e8b57;
+                padding: 20px;
+            }
+
+            form {
+                background-color: #fff;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 40px;
+                border-radius: 8px;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+                border: 1px solid #ddd;
+            }
+
+            fieldset {
+                border: 2px solid #2e8b57;
+                padding: 20px;
+                margin-bottom: 20px;
+                border-radius: 8px;
+                background-color: #fafafa;
+            }
+
+            legend {
+                font-size: 1.2em;
+                font-weight: bold;
+                color: #2e8b57;
+                margin-bottom: 10px;
+            }
+
+            label {
+                margin-right: 10px;
+                font-size: 1.1em;
+                display: inline-block;
+                margin-bottom: 5px;
+                cursor: pointer;
+            }
+
+            input[type="radio"] {
+                margin-right: 8px;
+                cursor: pointer;
+            }
+
+            input[type="radio"]:checked + label {
+                font-weight: bold;
+            }
+
+            input[type="submit"] {
+                background-color: #2e8b57;
+                color: #fff;
+                padding: 12px 25px;
+                border: none;
+                border-radius: 5px;
+                font-size: 1.1em;
+                cursor: pointer;
+                width: 100%;
+                transition: background-color 0.3s ease;
+            }
+
+            input[type="submit"]:hover {
+                background-color: #248e44;
+            }
+
+            input[type="submit"]:active {
+                background-color: #206c37;
+            }
+
+            fieldset + fieldset {
+                margin-top: 20px;
+            }
+
+            .survey-section {
+                margin-bottom: 30px;
+            }
+
+            @media (max-width: 768px) {
+                form {
+                    padding: 20px;
+                    width: 90%;
+                }
+
+                h1 {
+                    font-size: 2em;
+                }
+            }
+
+            @media (max-width: 480px) {
+                h1 {
+                    font-size: 1.6em;
+                }
+
+                input[type="submit"] {
+                    padding: 12px;
+                    font-size: 1em;
+                }
+
+                fieldset {
+                    padding: 15px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Survey Form</h1>
+        <div class="form-wrapper">
+            <form action="#" method="post">
+                <div class="survey-section">
+                    <fieldset>
+                        <legend>Question 1: How likely are you to recommend our service?</legend>
+                        <label>Agree <input type="radio" name="q1" value="1"></label>
+                        <label>Strongly Agree <input type="radio" name="q1" value="2"></label>
+                        <label>Neutral <input type="radio" name="q1" value="3"></label>
+                        <label>Disagree <input type="radio" name="q1" value="4"></label>
+                        <label>Strongly Disagree <input type="radio" name="q1" value="5"></label>
+                    </fieldset>
+                </div>
+
+                <div class="survey-section">
+                    <fieldset>
+                        <legend>Question 2: How satisfied are you with our website's usability?</legend>
+                        <label>Agree <input type="radio" name="q2" value="1"></label>
+                        <label>Strongly Agree <input type="radio" name="q2" value="2"></label>
+                        <label>Neutral <input type="radio" name="q2" value="3"></label>
+                        <label>Disagree <input type="radio" name="q2" value="4"></label>
+                        <label>Strongly Disagree <input type="radio" name="q2" value="5"></label>
+                    </fieldset>
+                </div>
+
+                <div class="survey-section">
+                    <fieldset>
+                        <legend>Question 3: How visually appealing do you find our website design?</legend>
+                        <label>Agree <input type="radio" name="q3" value="1"></label>
+                        <label>Strongly Agree <input type="radio" name="q3" value="2"></label>
+                        <label>Neutral <input type="radio" name="q3" value="3"></label>
+                        <label>Disagree <input type="radio" name="q3" value="4"></label>
+                        <label>Strongly Disagree <input type="radio" name="q3" value="5"></label>
+                    </fieldset>
+                </div>
+
+                <div class="survey-section">
+                    <fieldset>
+                        <legend>Question 4: How easy was it to find the information you were looking for?</legend>
+                        <label>Agree <input type="radio" name="q4" value="1"></label>
+                        <label>Strongly Agree <input type="radio" name="q4" value="2"></label>
+                        <label>Neutral <input type="radio" name="q4" value="3"></label>
+                        <label>Disagree <input type="radio" name="q4" value="4"></label>
+                        <label>Strongly Disagree <input type="radio" name="q4" value="5"></label>
+                    </fieldset>
+                </div>
+
+                <div class="survey-section">
+                    <fieldset>
+                        <legend>Question 5: How satisfied are you with the speed and performance of our website?</legend>
+                        <label>Agree <input type="radio" name="q5" value="1"></label>
+                        <label>Strongly Agree <input type="radio" name="q5" value="2"></label>
+                        <label>Neutral <input type="radio" name="q5" value="3"></label>
+                        <label>Disagree <input type="radio" name="q5" value="4"></label>
+                        <label>Strongly Disagree <input type="radio" name="q5" value="5"></label>
+                    </fieldset>
+                </div>
+
+                <div class="survey-section">
+                    <fieldset>
+                        <legend>Question 6: How easy was it to navigate through our website?</legend>
+                        <label>Agree <input type="radio" name="q6" value="1"></label>
+                        <label>Strongly Agree <input type="radio" name="q6" value="2"></label>
+                        <label>Neutral <input type="radio" name="q6" value="3"></label>
+                        <label>Disagree <input type="radio" name="q6" value="4"></label>
+                        <label>Strongly Disagree <input type="radio" name="q6" value="5"></label>
+                    </fieldset>
+                </div>
+
+                <div class="survey-section">
+                    <fieldset>
+                        <legend>Question 7: How would you rate the value you receive from our service?</legend>
+                        <label>Agree <input type="radio" name="q7" value="1"></label>
+                        <label>Strongly Agree <input type="radio" name="q7" value="2"></label>
+                        <label>Neutral <input type="radio" name="q7" value="3"></label>
+                        <label>Disagree <input type="radio" name="q7" value="4"></label>
+                        <label>Strongly Disagree <input type="radio" name="q7" value="5"></label>
+                    </fieldset>
+                </div>
+
+                <div class="survey-section">
+                    <fieldset>
+                        <legend>Question 8: How likely are you to use our service again in the future?</legend>
+                        <label>Agree <input type="radio" name="q8" value="1"></label>
+                        <label>Strongly Agree <input type="radio" name="q8" value="2"></label>
+                        <label>Neutral <input type="radio" name="q8" value="3"></label>
+                        <label>Disagree <input type="radio" name="q8" value="4"></label>
+                        <label>Strongly Disagree <input type="radio" name="q8" value="5"></label>
+                    </fieldset>
+                </div>
+
+                <div class="survey-section">
+                    <fieldset>
+                        <legend>Question 9: How satisfied are you with the overall experience of using our service?</legend>
+                        <label>Agree <input type="radio" name="q9" value="1"></label>
+                        <label>Strongly Agree <input type="radio" name="q9" value="2"></label>
+                        <label>Neutral <input type="radio" name="q9" value="3"></label>
+                        <label>Disagree <input type="radio" name="q9" value="4"></label>
+                        <label>Strongly Disagree <input type="radio" name="q9" value="5"></label>
+                    </fieldset>
+                </div>
+
+                <div class="survey-section">
+                    <fieldset>
+                        <legend>Question 10: How well do you think our service meets your needs?</legend>
+                        <label>Agree <input type="radio" name="q10" value="1"></label>
+                        <label>Strongly Agree <input type="radio" name="q10" value="2"></label>
+                        <label>Neutral <input type="radio" name="q10" value="3"></label>
+                        <label>Disagree <input type="radio" name="q10" value="4"></label>
+                        <label>Strongly Disagree <input type="radio" name="q10" value="5"></label>
+                    </fieldset>
+                </div>
+
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </body>
+</html>
