@@ -1,0 +1,125 @@
+the index.html code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wer-U App</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Friends Location Tracker</h1>
+</header>
+
+<div class="container">
+    <section class="left-section">
+        <h2>Friend List</h2>
+        <ul id="friend-list">
+            <!-- Friend list will be populated using JavaScript -->
+        </ul>
+    </section>
+
+    <section class="right-section">
+        <h2>Weather Information</h2>
+        <p>Current Weather: <span id="weather"></span></p>
+        <p>Temperature: <span id="temperature"></span> &#8451;</p>
+        <p>Wind Speed: <span id="wind-speed"></span> m/s</p>
+    </section>
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
+
+this is the code for style.css
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: forestgreen;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.left-section {
+    flex: 1;
+    padding: 10px;
+    border-right: 1px solid #ccc;
+}
+
+.right-section {
+    flex: 1;
+    padding: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+li:hover {
+    background-color: #f2f2f2;
+}
+
+section h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+section p {
+    margin: 5px 0;
+}
+
+section span {
+    font-weight: bold;
+}
+
+this is the code for app.js
+// Sample friend data
+const friendsData = [
+    { name: 'Kein' }, 
+    { name: 'Jhen' }, 
+    { name: 'Telly' }
+    // Add more friends here...
+];
+
+// Function to populate the friend list
+function populateFriendList() {
+    const friendList = document.getElementById("friend-list");
+    
+    friendsData.forEach(friend => {
+        const listItem = document.createElement("li");
+        listItem.textContent = friend.name;
+        friendList.appendChild(listItem);
+    });
+}
+
+// Function to update weather information
+function updateWeatherInfo() {
+    // Replace with actual weather API integration
+    document.getElementById("weather").textContent = "Cloudy";
+    document.getElementById("temperature").textContent = 25;
+    document.getElementById("wind-speed").textContent = 7;
+}
+
+// Call functions on page load
+populateFriendList();
+updateWeatherInfo();
