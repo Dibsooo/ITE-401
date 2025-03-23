@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat in Blog</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to CSS -->
+</head>
+<body>
+
+    <h1 style="text-align: center;">Chat Inbox</h1>
+
+    <div class="chat-container">
+        <div class="chat-messages" id="chat-messages"></div>
+        <div class="chat-input">
+            <input type="text" id="message-input" placeholder="Type your message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script> <!-- Link to JavaScript -->
+</body>
+</html>
+
+
+This is the code of the script.js
+function sendMessage() {
+    const messageInput = document.getElementById("message-input");
+    const message = messageInput.value.trim();
+
+    if (message !== "") {
+        const chatMessages = document.getElementById("chat-messages");
+        const newMessage = document.createElement("div");
+        newMessage.classList.add("message", "outgoing");
+        newMessage.textContent = message;
+        chatMessages.appendChild(newMessage);
+
+        messageInput.value = "";
+        messageInput.focus();
+
+        // Scroll to the bottom after sending a message
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+
+        // Simulate a reply after a short delay
+        setTimeout(sendReply, 1000);
+    }
+}
+
+function sendReply() {
+    const chatMessages = document.getElementById("chat-messages");
+    const replyMessage = document.createElement("div");
+    replyMessage.classList.add("message", "incoming");
+    replyMessage.textContent = "okay later.";
+    chatMessages.appendChild(replyMessage);
+
+    // Scroll to the bottom after receiving a reply
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+
+This is the code in style.css
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.chat-container {
+    max-width: 400px;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.chat-messages {
+    height: 300px;
+    overflow-y: auto;
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    padding: 8px 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    max-width: 70%;
+}
+
+.outgoing {
+    background-color: #007bff;
+    color: white;
+    align-self: flex-end;
+}
+
+.incoming {
+    background-color: #e5e5e5;
+    color: black;
+    align-self: flex-start;
+}
+
+.chat-input {
+    display: flex;
+    margin-top: 10px;
+}
+
+.chat-input input {
+    width: 70%;
+    padding: 5px;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.chat-input button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.chat-input button:hover {
+    background-color: #0056b3;
+}
